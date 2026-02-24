@@ -3,40 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Nabilah Sarah Azhar - Senior BI Professional specializing in Power BI, SQL, and data analytics">
+    <meta name="keywords" content="Business Intelligence, Power BI, SQL, Data Analytics, KPMG, Dashboard Development">
+    <meta name="author" content="Nabilah Sarah Azhar">
+    <meta property="og:title" content="Nabilah Sarah Azhar | BI Professional">
+    <meta property="og:description" content="Explore my BI projects and professional experience in Banking and Auto Financing">
+    <meta property="og:type" content="website">
+    
     <title>Nabilah Sarah Azhar | BI Professional</title>
+    
+    <!-- Syntax Highlighting for Code Blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
     <style>
         :root {
             --primary: #2b6cb0;
             --secondary: #1a365d;
             --light: #f0f4f8;
+            --text-dark: #2c3e50;
+            --border-color: #e1e8ed;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background: var(--light);
-            color: var(--secondary);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
+        /* Header Styles */
         .header {
-            background: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            opacity: 0.95;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .header a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Navigation Styles */
         .navbar {
             background: var(--primary);
             padding: 1rem;
             position: sticky;
             top: 0;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 100;
         }
 
         .navbar a {
@@ -44,22 +89,66 @@
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: 500;
+            display: inline-block;
+            transition: opacity 0.3s ease;
         }
 
+        .navbar a:hover {
+            opacity: 0.8;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Section Styles */
         .section {
             padding: 3rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section h2 {
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Card Styles */
         .card {
             background: white;
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 2rem;
             margin: 1.5rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Timeline Styles */
         .timeline {
             border-left: 3px solid var(--primary);
             margin: 2rem 0;
@@ -72,6 +161,12 @@
             padding: 1.5rem;
             background: white;
             border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .job:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
         .job:before {
@@ -83,22 +178,170 @@
             font-size: 1.5rem;
         }
 
-        pre {
-            background: var(--secondary);
-            color: white;
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
+        .job h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .job ul {
+            list-style-position: inside;
             margin: 1rem 0;
         }
 
+        .job li {
+            margin: 0.5rem 0;
+        }
+
+        /* Code Block Styles */
+        pre {
+            background: var(--secondary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+            font-size: 0.9rem;
+        }
+
+        pre code {
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Project Tag Styles */
         .project-tag {
             background: #e2e8f0;
-            padding: 0.3rem 0.8rem;
+            color: var(--secondary);
+            padding: 0.4rem 1rem;
             border-radius: 20px;
             display: inline-block;
             margin: 0.3rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            columns: 2;
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-category li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Portfolio Section */
+        .portfolio-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .portfolio-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .portfolio-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-card a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid {
+                columns: 1;
+            }
+
+            .card,
+            .portfolio-card,
+            .job {
+                padding: 1.5rem;
+            }
+
+            pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -109,14 +352,14 @@
         <p>Senior Associate of IT Insight & Intelligence | KPMG Indonesia</p>
         <p>📍 Bekasi, Indonesia | 📞 +62 858 8199 6398</p>
         <div style="margin-top: 1rem;">
-            <a href="https://github.com/Hailsarah" target="_blank">GitHub</a> | 
-            <a href="https://linkedin.com/in/nabilahsarah" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Hailsarah" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+            <a href="https://linkedin.com/in/nabilahsarah" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar">
-		<a href="#skills">Skills</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#education">Education</a>
@@ -126,8 +369,8 @@
     <section id="skills" class="section">
         <h2>Skill Set</h2>
         <div class="card">
-            <div style="columns: 2;">
-                <div>
+            <div class="skills-grid">
+                <div class="skill-category">
                     <h3>Core Technical</h3>
                     <ul>
                         <li>Power BI & Tableau</li>
@@ -136,7 +379,7 @@
                         <li>ETL Processes</li>
                     </ul>
                 </div>
-                <div>
+                <div class="skill-category">
                     <h3>Domain Knowledge</h3>
                     <ul>
                         <li>Banking Systems</li>
@@ -154,14 +397,14 @@
         <h2>Professional Journey</h2>
         <div class="timeline">
 			
-			  <div class="job">
+            <div class="job">
                 <h3>KPMG Indonesia</h3>
                 <p><strong>Senior Associate of IT Insight & Intelligence</strong> | June 2025 - Present</p>
                 <ul>
                     <li>Developed 5 Dashboard & Data Automatization with Power BI, Excel Macro, PowerShell</li>
                     <li>Reduced financial & people team reporting time by 80% through process automation</li>
-                    <li>Conducted and facilitated UAT and meeting sessions with 100% Stakeholers satisfaction rate</li>
-		    <li>Conducted User Training to deliver product smoothly</li>
+                    <li>Conducted and facilitated UAT and meeting sessions with 100% Stakeholders satisfaction rate</li>
+                    <li>Conducted User Training to deliver product smoothly</li>
                 </ul>
             </div>
 			
@@ -172,7 +415,7 @@
                     <li>Developed 15+ Power BI dashboards for automotive financing clients</li>
                     <li>Reduced financial reporting time by 40% through process automation</li>
                     <li>Conducted and facilitated UAT and meeting sessions with 95% client satisfaction rate</li>
-		    <li>Conducted User Training to deliver product smoothly</li>
+                    <li>Conducted User Training to deliver product smoothly</li>
                 </ul>
             </div>
 
@@ -192,10 +435,10 @@
         <h2>Business Analysis Portfolio</h2>
 
         <!-- Project 1 -->
-        <div class="card">
+        <article class="portfolio-card">
             <h3>🏦 Banking Customer Segmentation</h3>
-            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank">Bank Customer Churn Prediction</a></p>
-            <pre><code>-- High-Value Customer Identification
+            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank" rel="noopener noreferrer">Bank Customer Churn Prediction</a></p>
+            <pre><code class="language-sql">-- High-Value Customer Identification
 SELECT 
     Customer_Age,
     Credit_Limit,
@@ -210,13 +453,13 @@ GROUP BY Customer_Age, Credit_Limit, Customer_Tier
 ORDER BY Credit_Limit DESC;</code></pre>
             <p><strong>Business Insight:</strong> Identified 15% premium customers contributing 60% of total transaction value</p>
             <p><strong>Recommended Action:</strong> Created targeted retention program reducing churn by 12%</p>
-        </div>
+        </article>
 
         <!-- Project 2 -->
-        <div class="card">
+        <article class="portfolio-card">
             <h3>🚗 Auto Loan Risk Analysis</h3>
-            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/avikpaul4u/vehicle-loan-default-prediction" target="_blank">Vehicle Loan Default Data</a></p>
-            <pre><code>-- Default Risk by Employment Type
+            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/avikpaul4u/vehicle-loan-default-prediction" target="_blank" rel="noopener noreferrer">Vehicle Loan Default Data</a></p>
+            <pre><code class="language-sql">-- Default Risk by Employment Type
 SELECT 
     EMPLOYMENT_TYPE,
     AVG(Loan_Default) * 100 AS Default_Rate,
@@ -226,13 +469,13 @@ GROUP BY EMPLOYMENT_TYPE
 ORDER BY Default_Rate DESC;</code></pre>
             <p><strong>Business Insight:</strong> Self-employed applicants had 28% higher default rates</p>
             <p><strong>Recommended Action:</strong> Revised credit scoring model reducing NPL by 9%</p>
-        </div>
+        </article>
 
         <!-- Project 3 -->
-        <div class="card">
+        <article class="portfolio-card">
             <h3>🏥 Insurance Claim Analysis</h3>
-            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sagnik1511/car-insurance-data" target="_blank">Vehicle Insurance Claims</a></p>
-            <pre><code>-- Claim Frequency by Vehicle Age
+            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sagnik1511/car-insurance-data" target="_blank" rel="noopener noreferrer">Vehicle Insurance Claims</a></p>
+            <pre><code class="language-sql">-- Claim Frequency by Vehicle Age
 SELECT 
     Vehicle_Age,
     COUNT(Claim_ID) AS Total_Claims,
@@ -242,13 +485,13 @@ GROUP BY Vehicle_Age
 ORDER BY Total_Claims DESC;</code></pre>
             <p><strong>Business Insight:</strong> Vehicles aged 3-5 years accounted for 45% of total claims</p>
             <p><strong>Recommended Action:</strong> Introduced preventive maintenance discount program</p>
-        </div>
+        </article>
 
         <!-- Project 4 -->
-        <div class="card">
+        <article class="portfolio-card">
             <h3>📈 Retail Banking Product Analysis</h3>
-            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank">Credit Card Customers</a></p>
-            <pre><code>-- Product Penetration Analysis
+            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank" rel="noopener noreferrer">Credit Card Customers</a></p>
+            <pre><code class="language-sql">-- Product Penetration Analysis
 WITH CustomerGroups AS (
     SELECT 
         Total_Relationship_Count,
@@ -274,13 +517,13 @@ Customers with ≥3 products (High Relationship) have a higher retention rate of
 Customers with ≤2 products (Low Relationship) have a lower retention rate of 73.11%.
 This means that customers with 3+ products are 13.75% more likely to stay compared to those with 1-2 products.</p>
             <p><strong>Recommended Action:</strong> Designed cross-sell campaign increasing product penetration by 18%</p>
-        </div>
+        </article>
 
         <!-- Project 5 -->
-        <div class="card">
+        <article class="portfolio-card">
             <h3>📊 HR Analytics for Banking</h3>
-            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset" target="_blank">IBM HR Analytics</a></p>
-            <pre><code>-- Attrition Risk Factors
+            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset" target="_blank" rel="noopener noreferrer">IBM HR Analytics</a></p>
+            <pre><code class="language-sql">-- Attrition Risk Factors
 SELECT 
     Department,
     JobRole,
@@ -291,30 +534,38 @@ GROUP BY Department, JobRole
 ORDER BY Attrition_Rate DESC;</code></pre>
             <p><strong>Business Insight:</strong> Sales reps had 25% attrition rate despite average salaries</p>
             <p><strong>Recommended Action:</strong> Implemented mentorship program reducing attrition by 15%</p>
-        </div>
+        </article>
     </section>
-
 
     <!-- Education Section -->
     <section id="education" class="section">
         <h2>Education & Credentials</h2>
         <div class="card">
-            <h3>Rakamin Academy | 2022</h3>
-            <p>Data Science Certification</p>
-            <ul>
-                <li>Machine Learning</li>
-                <li>Advanced SQL</li>
-                <li>Data Visualization</li>
-            </ul>
+            <div class="education-item">
+                <h3>Rakamin Academy</h3>
+                <p><strong>Data Science Certification</strong> | 2022</p>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Advanced SQL</li>
+                    <li>Data Visualization</li>
+                </ul>
+            </div>
 
-            <h3 style="margin-top: 1.5rem;">Universitas Negeri Jakarta | 2016-2021</h3>
-            <p>Bachelor of Electronics Engineering</p>
-            <p>GPA: 3.50/4.00</p>
+            <div class="education-item">
+                <h3>Universitas Negeri Jakarta</h3>
+                <p><strong>Bachelor of Electronics Engineering</strong> | 2016-2021</p>
+                <p>GPA: 3.50/4.00</p>
+            </div>
         </div>
     </section>
 
-    <footer style="background: var(--secondary); color: white; text-align: center; padding: 2rem;">
-        <p>©️ 2025 Nabilah Sarah Azhar | Anyway, Available with 1-month notice period🙏</p>
+    <!-- Footer -->
+    <footer>
+        <p>©️ 2025 Nabilah Sarah Azhar | Available with 1-month notice period 🙏</p>
     </footer>
+
+    <!-- Syntax Highlighting Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
 </body>
 </html>
