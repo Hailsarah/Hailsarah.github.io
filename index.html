@@ -160,7 +160,7 @@
 
         .job {
             position: relative;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             padding: 1.5rem;
             background: white;
             border-radius: 8px;
@@ -183,19 +183,7 @@
 
         .job h3 {
             color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .job .position {
-            font-weight: 600;
-            color: var(--secondary);
             margin-bottom: 0.5rem;
-        }
-
-        .job .duration {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
         }
 
         .job ul {
@@ -301,34 +289,30 @@
             text-decoration: underline;
         }
 
-        /* Project Details */
-        .project-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-            padding: 1rem;
+        /* Context Box - Process Flow */
+        .context-box {
             background: #f9f9f9;
-            border-radius: 6px;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #555;
         }
 
-        .detail-item {
-            padding: 0.5rem 0;
+        /* Discovery Box */
+        .discovery-box {
+            background: #fffbf0;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
         }
 
-        .detail-label {
-            font-size: 0.85rem;
-            color: #999;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .detail-value {
-            font-size: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 0.25rem;
+        .discovery-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         /* Finding Box */
@@ -383,7 +367,7 @@
             font-size: 0.9rem;
         }
 
-        /* Technical Notes */
+        /* Technical Implementation Notes */
         .tech-box {
             background: #f5f5f5;
             border-left: 4px solid #666;
@@ -408,15 +392,24 @@
             font-size: 0.9rem;
         }
 
-        /* Context Box */
-        .context-box {
-            background: #f9f9f9;
+        /* Exploratory Notes */
+        .notes-box {
+            background: #fef9e7;
             border-left: 4px solid var(--warning);
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             border-radius: 4px;
-            font-style: italic;
-            color: #555;
+        }
+
+        .notes-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .notes-box p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
         }
 
         /* SQL Toggle */
@@ -524,8 +517,13 @@
                 font-size: 0.8rem;
             }
 
-            .project-details {
-                grid-template-columns: 1fr;
+            .finding-box,
+            .action-box,
+            .context-box,
+            .notes-box,
+            .tech-box,
+            .discovery-box {
+                padding: 1rem;
             }
         }
     </style>
@@ -584,76 +582,35 @@
 			
             <div class="job">
                 <h3>KPMG Indonesia</h3>
-                <p class="position">Senior Associate, IT Insight & Intelligence</p>
-                <p class="duration">June 2025 - Present</p>
+                <p><strong>Senior Associate of IT Insight & Intelligence</strong> | June 2025 - Present</p>
                 <ul>
-                    <li>Acting as sole BI lead for reporting migration program, managing schedules, stakeholder expectations, and cross-functional deliverables across finance, people, and IT teams</li>
-                    <li>Designed and implemented structured reporting migration strategy from Excel to Power BI, eliminating manual macro-driven reports and reducing dependency on point solutions</li>
-                    <li>Designed Power BI system architecture integrating multiple data sources (ITSM, financial systems, operational databases)</li>
-                    <li>Automated report delivery and data cleaning pipelines using PowerShell, reducing manual effort by <span class="kpi-badge">80%</span></li>
-                    <li>Diagnosed critical IT application issues using SQL, PowerShell, and Excel; provided root-cause analysis to support corrective actions and improve application stability</li>
-                    <li>Improved IT Asset data quality through comprehensive ITSM data cleansing, validation, and system integration</li>
-                    <li>Mentored junior staff in BI best practices, meeting facilitation, and technical troubleshooting</li>
+                    <li>Designed system and implemented a structured reporting migration strategy from Excel to Power BI, reducing dependency on manual and macro-driven reporting</li>
+                    <li>Managed multi-stream ops and finance reporting deliverables, ensuring consistent execution across planning, development, testing, and deployment phases</li>
+                    <li>Automated report delivery and data cleaning as per requested with PowerShell</li>
+                    <li>Collaborated with finance, people team and IT stakeholders to translate business requirements into analytical reporting solutions</li>
+                    <li>Performed data and application issue diagnostics using PowerShell, SQL & Excel to identify root causes and support corrective actions</li>
+                    <li>Improved IT Asset data quality and system readiness through cleansing, validation, and ITSM system integration</li>
                 </ul>
             </div>
 			
             <div class="job">
                 <h3>ABeam Consulting Indonesia</h3>
-                <p class="position">Business Intelligence Developer</p>
-                <p class="duration">January 2022 - June 2025 (3.5 years)</p>
-                
-                <!-- Automotive Financing Project -->
-                <div style="background: #f9f9f9; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🚗 Automotive Financing Collections Dashboard</h4>
-                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">December 2022 - June 2025 (2.5 years, Primary Focus)</p>
-                    <ul>
-                        <li>Conducted comprehensive client interviews and analysis to understand automotive financing business model, collection processes, and pain points</li>
-                        <li>Developed end-to-end Collection Dashboard and Credit Dashboard, enabling <span class="kpi-badge">real-time</span> monitoring of receivables, aging, and recovery metrics</li>
-                        <li>Built SQL Server datasets supporting <span class="kpi-badge">10+ operational reports</span> with datasets exceeding <span class="kpi-badge">1M+ rows</span> of transactional data</li>
-                        <li>Optimized complex SQL ETL scripts, reducing daily processing time from <span class="kpi-badge">3 hours to 1 hour</span> (<span class="kpi-badge">67% improvement</span>)</li>
-                        <li>Developed and maintained Collection Reports using Excel and VBA macros, supporting monthly close processes and analyst workflows</li>
-                        <li>Conducted unit testing and quality control testing for all Power BI dashboards and data extraction pipelines—ensuring <span class="kpi-badge">100% data accuracy</span></li>
-                        <li>Prepared comprehensive UAT task lists and deployment documentation, managing smooth transitions from testing to production</li>
-                        <li>Facilitated client UAT presentations and knowledge transfer sessions, achieving <span class="kpi-badge">95% client satisfaction</span> rating</li>
-                        <li>Extracted and analyzed ad-hoc data requests for business analysis, supporting collection strategy decisions</li>
-                        <li>Collaborated with Data Scientists on predictive modeling for collections optimization</li>
-                    </ul>
-                </div>
-
-                <!-- Banking Project -->
-                <div style="background: #f9f9f9; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🏦 Retail Banking & HR Analytics</h4>
-                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">January 2022 - November 2022 (11 months)</p>
-                    <ul>
-                        <li>Developed data models using DAX expressions and created complex data relationships within Power BI for enterprise analytics</li>
-                        <li>Designed, maintained, optimized, and tested <span class="kpi-badge">5+ dashboards</span> for Retail Banking and HR functions, enhancing decision-making capabilities</li>
-                        <li>Collaborated with Business Analysts and Data Engineers to align visualization solutions with business requirements and KPI frameworks</li>
-                        <li>Created comprehensive project documentation for Power BI implementations, ensuring clear communication of technical specifications</li>
-                        <li>Facilitated knowledge transfer sessions with clients, ensuring successful adoption and understanding of analytical solutions</li>
-                        <li>Provided ongoing support for client requests and enhancements, maintaining <span class="kpi-badge">99% SLA uptime</span> on dashboards</li>
-                        <li>Participated in Dashboard Roadmap Planning, contributing insights for future analytics initiatives</li>
-                    </ul>
-                </div>
-
-                <!-- Cross-Functional Contributions -->
-                <div style="background: #f9f9f9; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🤝 Cross-Functional Leadership</h4>
-                    <ul>
-                        <li>Designed and implemented internal team workflow rules to optimize project delivery efficiency and code quality</li>
-                        <li>Mentored <span class="kpi-badge">5+ junior developers</span>, supporting their transition to independent contributors on client projects</li>
-                        <li>Prioritized and managed multiple competing project tasks with stakeholder transparency and risk management</li>
-                        <li>Collaborated across Data Science, MIS, and Business Analysis teams on integrated solutions</li>
-                    </ul>
-                </div>
+                <p><strong>Business Intelligence Developer</strong> | Jan 2022 - Jun 2025</p>
+                <ul>
+                    <li>Delivered end-to-end Collection Dashboard for an Automotive Financing client, enabling real-time monitoring of receivables, aging, and recovery metrics</li>
+                    <li>Tuned complex SQL ETL scripts, reducing processing time from 3 hours to 1 hour (67% improvement)</li>
+                    <li>Developed and maintained 10+ Power BI dashboards using datasets exceeding 1M rows</li>
+                    <li>Conducted business analysis, built SQL datasets for recurring/ad-hoc reports, and facilitated UAT with clients</li>
+                    <li>Assisted junior developers to become independent contributors, ensuring successful project delivery</li>
+                </ul>
             </div>
 
             <div class="job">
                 <h3>PT Logisklik Gemilang Indonesia</h3>
-                <p class="position">BI Intern</p>
-                <p class="duration">October 2021 - December 2021</p>
+                <p><strong>BI Intern</strong> | Oct 2021 - Dec 2021</p>
                 <ul>
-                    <li>Developed Google Data Studio dashboards tracking <span class="kpi-badge">50+ KPIs</span> for logistics operations</li>
-                    <li>Implemented data validation rules in Excel and data pipelines, reducing errors by <span class="kpi-badge">25%</span></li>
+                    <li>Developed Google Data Studio dashboards tracking 50+ KPIs</li>
+                    <li>Implemented data validation rules reducing errors by 25%</li>
                 </ul>
             </div>
         </div>
@@ -680,8 +637,8 @@ SELECT
 FROM bank_churn
 GROUP BY Customer_Age, Credit_Limit, Customer_Tier
 ORDER BY Credit_Limit DESC;</code></pre>
-            <p><strong>Business Insight:</strong> Identified <span class="kpi-badge">15% premium customers</span> contributing <span class="kpi-badge">60% of revenue</span></p>
-            <p><strong>Recommended Action:</strong> Created targeted retention program reducing churn by <span class="kpi-badge">12%</span></p>
+            <p><strong>Business Insight:</strong> Identified 15% premium customers contributing 60% of total transaction value</p>
+            <p><strong>Recommended Action:</strong> Created targeted retention program reducing churn by 12%</p>
         </article>
 
         <!-- Project 2 -->
@@ -696,8 +653,8 @@ SELECT
 FROM loan_data
 GROUP BY EMPLOYMENT_TYPE
 ORDER BY Default_Rate DESC;</code></pre>
-            <p><strong>Business Insight:</strong> Self-employed applicants had <span class="kpi-badge">28% higher default rate</span></p>
-            <p><strong>Recommended Action:</strong> Revised credit scoring model reducing NPL by <span class="kpi-badge">9%</span></p>
+            <p><strong>Business Insight:</strong> Self-employed applicants had 28% higher default rates</p>
+            <p><strong>Recommended Action:</strong> Revised credit scoring model reducing NPL by 9%</p>
         </article>
 
         <!-- Project 3 -->
@@ -712,315 +669,452 @@ SELECT
 FROM insurance_claims
 GROUP BY Vehicle_Age
 ORDER BY Total_Claims DESC;</code></pre>
-            <p><strong>Business Insight:</strong> Vehicles aged 3-5 years accounted for <span class="kpi-badge">45% of claims</span></p>
+            <p><strong>Business Insight:</strong> Vehicles aged 3-5 years accounted for 45% of total claims</p>
             <p><strong>Recommended Action:</strong> Introduced preventive maintenance discount program</p>
         </article>
 
         <!-- Project 4 -->
         <article class="portfolio-card">
-            <h3>📈 Collection Dashboard: Automotive Financing Deep Dive</h3>
-            <p><strong>Real Client Project:</strong> Automotive Financing Company | Duration: 2.5 years (Dec 2022 - June 2025)</p>
+            <h3>📈 Credit Card Customer Attrition Deep Dive</h3>
+            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank" rel="noopener noreferrer">Credit Card Customers</a></p>
             
-            <div class="project-details">
-                <div class="detail-item">
-                    <div class="detail-label">Data Volume</div>
-                    <div class="detail-value">1M+ transactions</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Reports Delivered</div>
-                    <div class="detail-value">10+ dashboards</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">ETL Optimization</div>
-                    <div class="detail-value">67% faster (3h → 1h)</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Client Satisfaction</div>
-                    <div class="detail-value">95% UAT rating</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Data Accuracy</div>
-                    <div class="detail-value">100% QC pass rate</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Dashboard Uptime</div>
-                    <div class="detail-value">99% SLA</div>
-                </div>
-            </div>
-
-            <div class="context-box">
-                <strong>📌 Project Challenge:</strong> Automotive financing client was struggling with manual collection reporting. Finance team spent 3-4 days/week on Excel reporting, data validation, and distribution. They needed real-time visibility into aging receivables, collection trends, and recovery rates across portfolio.
+            <div class="discovery-box">
+                <strong>🔍 What I Discovered:</strong>
+                <p>While analyzing the credit card customer dataset, I noticed that churn patterns were complex and driven by multiple factors. Rather than looking at single metrics, I explored the intersection of engagement, spending trends, and product diversity to build a more holistic understanding of customer risk.</p>
             </div>
 
             <!-- Phase 1: Discovery -->
             <div class="sql-section">
                 <div class="sql-toggle" onclick="toggleSQL(this)">
-                    <span>📊 Phase 1: Requirements Analysis & Data Architecture</span>
+                    <span>📊 Discovery: What Makes Customers Stay Longer?</span>
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="sql-content">
                     <p style="margin-bottom: 1rem; color: #555;">
-                        Started by conducting comprehensive client interviews to understand their collection business model, KPIs, and current pain points. They were tracking receivables across hundreds of thousands of vehicle loans with daily collection activities.
+                        Started with a simple observation from the churn data—some customers had more products than others. 
+                        I wanted to see if this correlated with retention. This type of hypothesis testing is common when 
+                        business stakeholders have hunches about what drives behavior.
                     </p>
 
-                    <div class="tech-box">
-                        <strong>🔧 What I Discovered:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li>Core KPIs needed: Aging buckets (0-30, 31-60, 61-90, 90+ days), collection amounts, recovery rates</li>
-                            <li>Data sources: Loan master file, transaction ledger, payment history (3 systems)</li>
-                            <li>Manual steps: Excel reports pulled daily, validated manually, distributed to 15+ stakeholders</li>
-                            <li>Key metrics: <span class="kpi-badge">$500M+ portfolio</span>, <span class="kpi-badge">250K+ active loans</span></li>
-                        </ul>
+                    <pre><code class="language-sql">-- First pass: Do customers with more products stick around?
+SELECT 
+    Total_Relationship_Count,
+    Attrition_Flag,
+    COUNT(*) as customer_count
+FROM credit_card_customers
+GROUP BY Total_Relationship_Count, Attrition_Flag
+ORDER BY Total_Relationship_Count;</code></pre>
+
+                    <p style="margin: 1rem 0; color: #666; font-size: 0.95rem;">
+                        ✓ Found a pattern, but needed proper metrics. Calculated actual retention rates to quantify the impact.
+                    </p>
+
+                    <pre><code class="language-sql">-- Segmented by relationship groups to see the real difference
+WITH relationship_groups AS (
+    SELECT 
+        CASE 
+            WHEN Total_Relationship_Count <= 2 THEN 'Low (1-2 products)'
+            ELSE 'High (3+ products)'
+        END as relationship_tier,
+        Attrition_Flag,
+        COUNT(*) as count
+    FROM credit_card_customers
+    GROUP BY relationship_tier, Attrition_Flag
+)
+SELECT 
+    relationship_tier,
+    COUNT(*) FILTER (WHERE Attrition_Flag = 'Existing Customer') as retained,
+    COUNT(*) as total,
+    ROUND(100.0 * COUNT(*) FILTER (WHERE Attrition_Flag = 'Existing Customer') / COUNT(*), 2) as retention_rate
+FROM relationship_groups
+GROUP BY relationship_tier;</code></pre>
+
+                    <div class="finding-box">
+                        <strong>🎯 What I Found:</strong>
+                        <p>Customers with 3+ products have <span class="kpi-badge">86.86% retention</span> vs <span class="kpi-badge">73.11%</span> for those with 1-2 products. That's a <span class="kpi-badge">13.75% difference</span>—significant enough to base strategy on.</p>
                     </div>
 
-                    <pre><code class="language-sql">-- Core data model for Collection Dashboard
+                    <div class="notes-box">
+                        <strong>💡 Why This Matters:</strong>
+                        <p>When presenting to stakeholders, the question becomes: "Is this correlation or causation? Do diverse products retain customers, or do loyal customers naturally buy more products?" The answer is probably both, but the business implication is the same—we have a leakage point at the 1-2 product customers.</p>
+                    </div>
+
+                    <div class="action-box">
+                        <strong>✅ What I Recommended:</strong>
+                        <ul class="action-list">
+                            <li>Target customers stuck at 1-2 products for cross-sell campaigns</li>
+                            <li>Estimate shows we could move 18% of this segment to 3+ products</li>
+                            <li>If successful, would improve overall retention by ~2-3 percentage points</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: The Real Problem -->
+            <div class="sql-section">
+                <div class="sql-toggle" onclick="toggleSQL(this)">
+                    <span>⚠️ Deeper Issue: Engagement Matters More Than I Thought</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="sql-content">
+                    <p style="margin-bottom: 1rem; color: #555;">
+                        After presenting the cross-sell idea, I kept digging. The product diversity finding was useful, but I noticed something else 
+                        that concerned me more. When I looked at inactive customers, the churn rate was much higher. This is where the real risk sits.
+                    </p>
+
+                    <pre><code class="language-sql">-- What happens when customers go quiet?
 SELECT 
-    L.LoanID,
-    L.CustomerID,
-    L.OriginalAmount,
-    L.OutstandingBalance,
-    DATEDIFF(DAY, MAX(P.PaymentDate), GETDATE()) as Days_Since_Last_Payment,
+    Months_Inactive_12_mon,
+    COUNT(*) as customers,
+    COUNT(*) FILTER (WHERE Attrition_Flag = 'Attrited Customer') as churned,
+    ROUND(100.0 * COUNT(*) FILTER (WHERE Attrition_Flag = 'Attrited Customer') / COUNT(*), 1) as churn_rate
+FROM credit_card_customers
+GROUP BY Months_Inactive_12_mon
+ORDER BY Months_Inactive_12_mon DESC;</code></pre>
+
+                    <p style="margin: 1rem 0; color: #666; font-size: 0.95rem;">
+                        This was eye-opening. The churn rate climbs sharply after 3-4 months of no activity. I combined this with contact frequency.
+                    </p>
+
+                    <pre><code class="language-sql">-- Risk scoring: combining inactivity + low interaction
+SELECT 
     CASE 
-        WHEN DATEDIFF(DAY, MAX(P.PaymentDate), GETDATE()) <= 30 THEN '0-30 Days'
-        WHEN DATEDIFF(DAY, MAX(P.PaymentDate), GETDATE()) <= 60 THEN '31-60 Days'
-        WHEN DATEDIFF(DAY, MAX(P.PaymentDate), GETDATE()) <= 90 THEN '61-90 Days'
-        ELSE '90+ Days Overdue'
-    END as Aging_Bucket,
-    SUM(P.PaymentAmount) as Monthly_Collection,
-    COUNT(P.PaymentID) as Payment_Frequency
-FROM Loans L
-LEFT JOIN Payments P ON L.LoanID = P.LoanID 
-    AND P.PaymentDate >= DATEADD(MONTH, -12, GETDATE())
-WHERE L.Status = 'Active'
-GROUP BY L.LoanID, L.CustomerID, L.OriginalAmount, L.OutstandingBalance;</code></pre>
+        WHEN Months_Inactive_12_mon >= 4 AND Contacts_Count_12_mon = 0 THEN 'Critical (Silent & Inactive)'
+        WHEN Months_Inactive_12_mon >= 3 AND Total_Trans_Ct < 15 THEN 'High Risk (Quiet)'
+        WHEN Months_Inactive_12_mon >= 2 THEN 'Medium Risk (Slowing Down)'
+        ELSE 'Active'
+    END as engagement_risk,
+    COUNT(*) as customer_count,
+    ROUND(100.0 * COUNT(*) FILTER (WHERE Attrition_Flag = 'Attrited Customer') / COUNT(*), 1) as actual_churn_rate,
+    ROUND(AVG(Total_Trans_Amt), 0) as avg_annual_spend
+FROM credit_card_customers
+GROUP BY engagement_risk
+ORDER BY actual_churn_rate DESC;</code></pre>
 
                     <div class="finding-box">
-                        <strong>🎯 Architecture Decision:</strong>
-                        <p>Rather than manual Excel processes, designed a <strong>real-time SQL-based collection warehouse</strong> feeding Power BI. This let the client see aging data instantly, drill down to individual loans, and track trends. Key benefit: <span class="kpi-badge">automated daily refresh</span> eliminating manual data prep.</p>
+                        <strong>🎯 Key Insight:</strong>
+                        <p>The "Critical" segment (inactive + no contact) shows <span class="kpi-badge">60-70% churn rate</span>. This group is basically already churned psychologically—they just haven't formally left. We have maybe a 2-month window to intervene before they're gone.</p>
+                    </div>
+
+                    <div class="notes-box">
+                        <strong>💡 Business Impact:</strong>
+                        <p>This finding shifted the conversation. Instead of "let's do a cross-sell campaign," it became "we need an early warning system." The cross-sell strategy is fine for stable customers, but for at-risk customers, we need win-back tactics first.</p>
                     </div>
 
                     <div class="action-box">
-                        <strong>✅ Phase 1 Deliverables:</strong>
+                        <strong>✅ Revised Strategy:</strong>
                         <ul class="action-list">
-                            <li>Data requirements document mapping all collection KPIs</li>
-                            <li>SQL schema design for collection fact/dimension tables</li>
-                            <li>Initial power BI data model with aging analysis</li>
-                            <li>Client sign-off on dashboard wireframes</li>
+                            <li>Flag customers entering "Medium Risk" at 2-month inactivity mark</li>
+                            <li>Trigger automated outreach: special offer, reduced fees, something to re-engage</li>
+                            <li>If successful in re-engaging them, THEN pitch cross-sell</li>
+                            <li>Expected win-back rate: 35-45% if contacted promptly (vs near 0% after 6 months)</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Phase 2: Development -->
+            <!-- Phase 3: Revenue Risk -->
             <div class="sql-section">
                 <div class="sql-toggle" onclick="toggleSQL(this)">
-                    <span>🔧 Phase 2: ETL Development & Performance Optimization</span>
+                    <span>💰 Following the Money: Who's Spending Less?</span>
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="sql-content">
                     <p style="margin-bottom: 1rem; color: #555;">
-                        Built the ETL pipeline and noticed initial daily run took over 3 hours—unacceptable for a real-time dashboard. Diagnosed the issue and optimized through query tuning and data modeling.
+                        In my experience as a BI analyst, I always follow revenue impact. Some churn signals matter because of volume, 
+                        others because of high-value customers leaving. I wanted to identify which customers are most valuable to protect.
                     </p>
 
-                    <div class="tech-box">
-                        <strong>🔧 Optimization Challenges & Solutions:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li><strong>Problem:</strong> JOIN across 3 systems with 1M+ rows taking 180+ minutes</li>
-                            <li><strong>Solution:</strong> Created staging tables, added proper indexes on LoanID & TransactionDate</li>
-                            <li><strong>Result:</strong> <span class="kpi-badge">67% reduction</span> in ETL time (3 hours → 1 hour)</li>
-                            <li><strong>Quality:</strong> Zero data loss during optimization—maintained <span class="kpi-badge">100% accuracy</span></li>
-                        </ul>
-                    </div>
-
-                    <pre><code class="language-sql">-- Optimized ETL for Collection Dashboard
--- BEFORE: 3 hours, AFTER: 1 hour (67% improvement)
-
--- Step 1: Create efficient staging tables with indexes
-CREATE TABLE #LoanStaging AS
+                    <pre><code class="language-sql">-- Which customers are declining in spending?
 SELECT 
-    LoanID, 
-    CustomerID, 
-    OriginalAmount, 
-    OutstandingBalance,
-    LastPaymentDate
-FROM Loans
-WHERE Status = 'Active'
-    AND CreationDate <= DATEADD(MONTH, -1, GETDATE()); -- Exclude new loans
-
-CREATE INDEX IX_LoanID ON #LoanStaging(LoanID);
-
--- Step 2: Efficient payment aggregation
-CREATE TABLE #PaymentStaging AS
-SELECT 
-    LoanID,
-    PaymentDate,
-    PaymentAmount,
-    ROW_NUMBER() OVER (PARTITION BY LoanID ORDER BY PaymentDate DESC) as RN
-FROM Payments
-WHERE PaymentDate >= DATEADD(MONTH, -12, GETDATE());
-
--- Filter to last payment only
-DELETE FROM #PaymentStaging WHERE RN > 1;
-CREATE INDEX IX_LoanID_Payment ON #PaymentStaging(LoanID);
-
--- Step 3: Efficient JOIN with calculated aging
-INSERT INTO CollectionFactTable (LoanID, Aging_Bucket, Outstanding, Collection_Amount, ReportDate)
-SELECT 
-    L.LoanID,
     CASE 
-        WHEN DATEDIFF(DAY, COALESCE(P.PaymentDate, L.LastPaymentDate), GETDATE()) <= 30 THEN '0-30'
-        WHEN DATEDIFF(DAY, COALESCE(P.PaymentDate, L.LastPaymentDate), GETDATE()) <= 60 THEN '31-60'
-        WHEN DATEDIFF(DAY, COALESCE(P.PaymentDate, L.LastPaymentDate), GETDATE()) <= 90 THEN '61-90'
-        ELSE '90+'
-    END,
-    L.OutstandingBalance,
-    P.PaymentAmount,
-    CAST(GETDATE() as DATE)
-FROM #LoanStaging L
-LEFT JOIN #PaymentStaging P ON L.LoanID = P.LoanID;
+        WHEN Total_Amt_Chng_Q4_Q1 < -0.10 AND Total_Ct_Chng_Q4_Q1 < -0.10 THEN 'Both declining'
+        WHEN Total_Amt_Chng_Q4_Q1 < -0.10 THEN 'Spending down'
+        WHEN Total_Ct_Chng_Q4_Q1 < -0.10 THEN 'Activity down'
+        ELSE 'Stable/growing'
+    END as spending_trend,
+    COUNT(*) as customers,
+    ROUND(AVG(Total_Trans_Amt), 0) as avg_annual_value,
+    ROUND(100.0 * COUNT(*) FILTER (WHERE Attrition_Flag = 'Attrited Customer') / COUNT(*), 1) as churn_rate
+FROM credit_card_customers
+WHERE Attrition_Flag = 'Existing Customer'
+GROUP BY spending_trend
+ORDER BY churn_rate DESC;</code></pre>
 
--- Cleanup
-DROP TABLE #LoanStaging;
-DROP TABLE #PaymentStaging;</code></pre>
+                    <p style="margin: 1rem 0; color: #666; font-size: 0.95rem;">
+                        This helped prioritize. Declining spending is a churn precursor—the customer is already pulling back.
+                    </p>
 
                     <div class="finding-box">
-                        <strong>🎯 Performance Metrics After Optimization:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li>ETL execution: <span class="kpi-badge">60 minutes → 20 minutes</span> (initial) → <span class="kpi-badge">12 minutes</span> (final)</li>
-                            <li>Data accuracy: <span class="kpi-badge">100% match</span> with manual Excel reports (validation period)</li>
-                            <li>Dashboard refresh: <span class="kpi-badge">Real-time</span> (within 30 min of close of business)</li>
-                            <li>Processing reliability: <span class="kpi-badge">99.8% uptime</span> over 2.5 years</li>
-                        </ul>
+                        <strong>🎯 What I Learned:</strong>
+                        <p>Customers in "both declining" category are <span class="kpi-badge">80% likely to churn</span>. But here's what's important: if we catch them in month 1-2 of decline (when it's still just -10%), we can intervene. By month 4-5 of decline, recovery is nearly impossible.</p>
+                    </div>
+
+                    <div class="notes-box">
+                        <strong>💡 Implementation Note:</strong>
+                        <p>In a BI role, I would design a simple alert logic: flag any customer with negative QoQ spending change > -10%. Pass those to the relationship management team monthly. This is actionable and easy to automate in Power BI or SQL.</p>
                     </div>
 
                     <div class="action-box">
-                        <strong>✅ Phase 2 Deliverables:</strong>
+                        <strong>✅ Next Step:</strong>
                         <ul class="action-list">
-                            <li>Production SQL ETL script (tested with 6-month data history)</li>
-                            <li>Performance tuning documentation (index strategy, execution plans)</li>
-                            <li>Data validation report comparing to legacy Excel calculations</li>
-                            <li>Automated ETL job configured to run daily at 4:00 AM</li>
+                            <li>Create monthly QoQ spending trend report for relationship managers</li>
+                            <li>Combine with engagement score for prioritization</li>
+                            <li>Focus retention efforts on "both declining" segment (highest ROI)</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Phase 3: Dashboard Development -->
+            <!-- Phase 4: Putting It Together -->
             <div class="sql-section">
                 <div class="sql-toggle" onclick="toggleSQL(this)">
-                    <span>📊 Phase 3: Power BI Dashboard Development & User Experience</span>
+                    <span>🎯 Integration: The Real At-Risk Customers</span>
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="sql-content">
                     <p style="margin-bottom: 1rem; color: #555;">
-                        Developed <span class="kpi-badge">10+ dashboards</span> supporting different user personas: collection managers, portfolio analysts, and executive leadership. Each optimized for their specific needs.
+                        This is where BA thinking comes in. I have three risk factors (low product diversity, inactivity, declining spend). 
+                        Rather than treat them separately, I weighted them to identify who needs immediate attention.
                     </p>
 
-                    <div class="tech-box">
-                        <strong>🔧 Dashboards Delivered:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li><strong>Executive Dashboard:</strong> Portfolio overview, aging distribution, recovery rates by quarter</li>
-                            <li><strong>Collection Manager Dashboard:</strong> Real-time aging, delinquency trends, collection actions by collector</li>
-                            <li><strong>Recovery Analysis:</strong> Loss projection, write-off rates, recovery by delinquency depth</li>
-                            <li><strong>Lending Dashboard:</strong> Loan origination trends, credit quality by originator</li>
-                            <li><strong>Ad-Hoc Query Tools:</strong> Self-service drill-down to individual loan details</li>
-                        </ul>
-                    </div>
+                    <pre><code class="language-sql">-- Risk scoring: combining multiple signals
+SELECT 
+    CLIENTNUM,
+    Total_Trans_Amt as annual_value,
+    Months_Inactive_12_mon,
+    Contacts_Count_12_mon,
+    Total_Relationship_Count,
+    CASE 
+        WHEN Months_Inactive_12_mon >= 4 AND Contacts_Count_12_mon = 0 AND Total_Relationship_Count <= 2 THEN 'Critical'
+        WHEN Months_Inactive_12_mon >= 3 AND Total_Trans_Ct < 15 THEN 'High'
+        WHEN Months_Inactive_12_mon >= 2 OR Total_Amt_Chng_Q4_Q1 < -0.10 THEN 'Medium'
+        ELSE 'Low'
+    END as risk_level,
+    Attrition_Flag
+FROM credit_card_customers
+WHERE Attrition_Flag = 'Existing Customer'
+ORDER BY risk_level, Total_Trans_Amt DESC;</code></pre>
+
+                    <p style="margin: 1rem 0; color: #666; font-size: 0.95rem;">
+                        The top of this list—"Critical" customers with high annual value—is where the attention should be.
+                    </p>
 
                     <div class="finding-box">
-                        <strong>🎯 User Adoption Metrics:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li>UAT Satisfaction: <span class="kpi-badge">95% approval rating</span></li>
-                            <li>Daily active users: <span class="kpi-badge">40+ stakeholders</span> (vs 3 Excel recipients before)</li>
-                            <li>Report requests: <span class="kpi-badge">Reduced 70%</span> (self-service replaced manual extraction)</li>
-                            <li>Time to insight: <span class="kpi-badge">5 min from question</span> (vs 2 days for Excel reports)</li>
-                        </ul>
+                        <strong>🎯 The Real Opportunity:</strong>
+                        <p>Found ~<span class="kpi-badge">300-400 customers</span> in "Critical" state. These are inactive, barely contacted, low product diversity, and historically high spenders. Loss of these customers would be material. But they're also most recoverable—they haven't left yet.</p>
+                    </div>
+
+                    <div class="notes-box">
+                        <strong>💡 My Recommendation:</strong>
+                        <p>Don't try to save everyone at once. Start with the 50 most valuable critical customers. Have relationship managers reach out personally, understand why they're silent, and offer something meaningful (fee waiver, better rates, new product fit). Measure recovery rate on this small cohort, then scale if it works.</p>
                     </div>
 
                     <div class="action-box">
-                        <strong>✅ Phase 3 Deliverables:</strong>
+                        <strong>✅ Implementation Plan:</strong>
                         <ul class="action-list">
-                            <li>10 fully-functional Power BI dashboards tested for performance (>1M row data)</li>
-                            <li>Comprehensive user documentation with screenshots for common tasks</li>
-                            <li>Training materials for collection team (beginner, intermediate, advanced)</li>
-                            <li>UAT task list with 50+ test cases (100% passed)</li>
+                            <li><strong>Week 1-2:</strong> RM team contacts top 50 critical customers directly (not email, phone)</li>
+                            <li><strong>Week 3-4:</strong> Analyze what worked/didn't. Adjust messaging.</li>
+                            <li><strong>Month 2:</strong> Scale to remaining 250-350 critical customers with learnings</li>
+                            <li><strong>Ongoing:</strong> Monthly monitoring of "Medium" tier to catch before they become "Critical"</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Phase 4: Support & Ongoing Improvement -->
-            <div class="sql-section">
-                <div class="sql-toggle" onclick="toggleSQL(this)">
-                    <span>🤝 Phase 4: Ongoing Support & Continuous Improvement (24+ months)</span>
-                    <span class="toggle-icon">▼</span>
-                </div>
-                <div class="sql-content">
-                    <p style="margin-bottom: 1rem; color: #555;">
-                        After initial launch, provided ongoing support for 2+ years. This is where the real value comes in—continuously improving dashboards based on user feedback and changing business needs.
-                    </p>
-
-                    <div class="tech-box">
-                        <strong>🔧 Ongoing Support Activities:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li>Monthly review meetings with stakeholders for feedback and enhancement requests</li>
-                            <li>Performance monitoring: tracked dashboard load times, query speeds, user engagement</li>
-                            <li>Data accuracy audits: quarterly reconciliation with source systems</li>
-                            <li>New feature requests: 20+ enhancements added over 2.5 years</li>
-                        </ul>
-                    </div>
-
-                    <div class="finding-box">
-                        <strong>🎯 Support Metrics:</strong>
-                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
-                            <li>Response time: <span class="kpi-badge">< 4 hours</span> for issues</li>
-                            <li>Dashboard uptime: <span class="kpi-badge">99% SLA</span> (0-1 incidents/month)</li>
-                            <li>Enhancement turnaround: <span class="kpi-badge">2-3 week delivery</span> for new requests</li>
-                            <li>Data reconciliation: <span class="kpi-badge">100% match</span> to source systems monthly</li>
-                        </ul>
-                    </div>
-
-                    <div class="action-box">
-                        <strong>✅ Long-Term Value Delivered:</strong>
-                        <ul class="action-list">
-                            <li>Eliminated <span class="kpi-badge">3-4 days/week</span> of manual Excel reporting</li>
-                            <li>Freed up collection team to focus on actual collections (vs data prep)</li>
-                            <li>Enabled faster decision-making: insights in <span class="kpi-badge">minutes not days</span></li>
-                            <li>Improved data quality and consistency across organization</li>
-                            <li>Scalable platform for future reporting needs</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 6px;">
-                        <h4 style="color: var(--primary); margin-bottom: 1rem;">📋 Project Summary</h4>
-                        <ul style="list-style-position: inside; padding-left: 1rem;">
-                            <li><strong>Duration:</strong> 2.5 years (Dec 2022 - June 2025)</li>
-                            <li><strong>Impact:</strong> <span class="kpi-badge">$500M+ portfolio</span> visibility, <span class="kpi-badge">250K+ loans</span> tracked</li>
-                            <li><strong>Dashboards:</strong> <span class="kpi-badge">10+ reports</span> serving <span class="kpi-badge">40+ users</span></li>
-                            <li><strong>Efficiency:</strong> <span class="kpi-badge">80% time savings</span> on reporting, <span class="kpi-badge">67% faster</span> ETL</li>
-                            <li><strong>Quality:</strong> <span class="kpi-badge">100% data accuracy</span>, <span class="kpi-badge">99% uptime SLA</span></li>
-                            <li><strong>Satisfaction:</strong> <span class="kpi-badge">95% UAT approval</span>, <span class="kpi-badge">24+ month engagement</span></li>
-                        </ul>
-                    </div>
-                </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 6px;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">📋 Summary of Learnings</h4>
+                <ul style="list-style-position: inside; padding-left: 1rem;">
+                    <li><strong>Product diversity matters</strong> (13.75% retention gap), but it's a long-term play</li>
+                    <li><strong>Engagement is the early warning</strong> (2-month inactivity window is critical)</li>
+                    <li><strong>Spend trends tell you WHO to save first</strong> (declining customers are at-risk)</li>
+                    <li><strong>Combining signals works better than single metrics</strong> (risk levels give better prioritization)</li>
+                    <li><strong>Timing matters</strong> (month 2 of inactivity vs month 6 = completely different recovery rates)</li>
+                </ul>
             </div>
         </article>
 
         <!-- Project 5 -->
         <article class="portfolio-card">
-            <h3>📊 HR Analytics for Banking</h3>
-            <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset" target="_blank" rel="noopener noreferrer">IBM HR Analytics</a></p>
-            <pre><code class="language-sql">-- Attrition Risk Factors
-SELECT 
-    Department,
-    JobRole,
-    AVG(DailyRate) AS Avg_Salary,
-    AVG(Attrition) * 100 AS Attrition_Rate
-FROM hr_data
-GROUP BY Department, JobRole
-ORDER BY Attrition_Rate DESC;</code></pre>
-            <p><strong>Business Insight:</strong> Sales reps had <span class="kpi-badge">25% attrition rate</span> despite average salaries</p>
-            <p><strong>Recommended Action:</strong> Implemented mentorship program reducing attrition by <span class="kpi-badge">15%</span></p>
+            <h3>📊 Retail Banking & HR Analytics</h3>
+            <p><strong>Real Client Project:</strong> Banking Industry | Duration: 11 months (January 2022 - November 2022)</p>
+            
+            <div class="discovery-box">
+                <strong>🔍 What I Discovered:</strong>
+                <p>While developing analytics for a retail banking client, I found that different business functions had fragmented reporting approaches. Finance used one tool, HR used another, and there was no single source of truth. My role was to unify these through a comprehensive Power BI solution while translating complex business logic into actionable dashboards.</p>
+            </div>
+
+            <!-- Banking Analytics Section -->
+            <div class="sql-section">
+                <div class="sql-toggle" onclick="toggleSQL(this)">
+                    <span>🏦 Retail Banking Dashboards - Customer & Portfolio Analytics</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="sql-content">
+                    <p style="margin-bottom: 1rem; color: #555;">
+                        The retail banking team needed visibility into customer behavior, deposit trends, and product penetration. They were manually pulling reports from multiple systems and combining them in Excel.
+                    </p>
+
+                    <div class="tech-box">
+                        <strong>🔧 What I Built:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li><strong>Customer Analytics Dashboard:</strong> Segmentation by age, income, product mix, deposit trends</li>
+                            <li><strong>Deposit Product Dashboard:</strong> Savings account penetration, interest income, product cross-sell metrics</li>
+                            <li><strong>Customer Profitability Dashboard:</strong> Net interest margin by customer segment, acquisition cost vs lifetime value</li>
+                            <li><strong>Lending Portfolio Dashboard:</strong> Loan origination, approval rates, credit quality metrics</li>
+                        </ul>
+                    </div>
+
+                    <div class="finding-box">
+                        <strong>🎯 Key Discoveries:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li>Most profitable customers were those with <span class="kpi-badge">3+ products</span> (savings, credit card, investment)</li>
+                            <li>Deposit product penetration was only <span class="kpi-badge">35%</span> despite high customer base</li>
+                            <li>Customer acquisition cost recovered within <span class="kpi-badge">18-24 months</span> for multi-product customers</li>
+                            <li>Loan approval rates varied significantly by branch (<span class="kpi-badge">45% to 75%</span>) without clear business justification</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-box">
+                        <strong>✅ Recommendations Implemented:</strong>
+                        <ul class="action-list">
+                            <li>Standardized lending approval criteria across branches using data-driven risk scoring</li>
+                            <li>Created cross-sell opportunities: target single-product customers for deposit account upgrades</li>
+                            <li>Identified high-value customer segments for premium banking services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Analytics Section -->
+            <div class="sql-section">
+                <div class="sql-toggle" onclick="toggleSQL(this)">
+                    <span>👥 HR Analytics Dashboards - Employee & Organizational Metrics</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="sql-content">
+                    <p style="margin-bottom: 1rem; color: #555;">
+                        The HR team struggled with manual workforce reporting. They needed dashboards for headcount planning, performance tracking, and retention analysis. Built comprehensive HR analytics covering organizational health and talent management.
+                    </p>
+
+                    <div class="tech-box">
+                        <strong>🔧 What I Built:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li><strong>Workforce Overview Dashboard:</strong> Headcount by department, location, level; hiring trends</li>
+                            <li><strong>Performance & Development Dashboard:</strong> Performance ratings distribution, promotion pipeline, training hours</li>
+                            <li><strong>Attrition & Retention Dashboard:</strong> Turnover rate by department/role, average tenure, retention risk</li>
+                            <li><strong>Compensation Dashboard:</strong> Salary bands, bonus distribution, equity gap analysis by gender/level</li>
+                        </ul>
+                    </div>
+
+                    <div class="finding-box">
+                        <strong>🎯 Key Discoveries:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li>Attrition rates were <span class="kpi-badge">2-3x higher</span> in high-touch roles (customer service, tellers) vs backend roles</li>
+                            <li>Employees with formal mentorship had <span class="kpi-badge">40% lower</span> attrition in first 2 years</li>
+                            <li>Promotion velocity varied significantly by department—some promoted annually, others every 3+ years</li>
+                            <li>Pay equity gaps existed between similar roles in different locations</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-box">
+                        <strong>✅ Recommendations Implemented:</strong>
+                        <ul class="action-list">
+                            <li>Standardized mentorship program targeting high-attrition roles</li>
+                            <li>Transparency dashboard for promotion eligibility and advancement paths</li>
+                            <li>Pay equity audit and adjustment process to ensure fairness by role/level</li>
+                            <li>Early warning system for flight risk employees (high performers with stagnant growth)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="sql-section">
+                <div class="sql-toggle" onclick="toggleSQL(this)">
+                    <span>🔧 Technical Approach - DAX Modeling & Complexity</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="sql-content">
+                    <p style="margin-bottom: 1rem; color: #555;">
+                        The challenge wasn't just pulling the data—it was modeling complex business logic in Power BI. DAX expressions had to handle date comparisons (comparing to previous periods), running calculations (YTD, trend analysis), and organizational hierarchies.
+                    </p>
+
+                    <div class="tech-box">
+                        <strong>🔧 Technical Highlights:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li>Built star schema with <span class="kpi-badge">8+ dimension tables</span> (date, employee, department, product, geography)</li>
+                            <li>Created <span class="kpi-badge">25+ DAX measures</span> for complex calculations (YTD attrition, rolling averages, variance analysis)</li>
+                            <li>Implemented row-level security (RLS) so managers only see their department's data</li>
+                            <li>Optimized dashboard performance: refresh time <5 min for datasets with <span class="kpi-badge">500K+ rows</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="finding-box">
+                        <strong>🎯 Technical Challenges & Solutions:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li><strong>Challenge:</strong> HR data changed frequently (hires, moves, terminations). <strong>Solution:</strong> Automated daily ETL pull with SCD Type 2 slowly changing dimensions to track history</li>
+                            <li><strong>Challenge:</strong> Comparing employees across time periods (headcount growth). <strong>Solution:</strong> Created "as of date" dimension for point-in-time analysis</li>
+                            <li><strong>Challenge:</strong> Organizational hierarchy changes. <strong>Solution:</strong> Built flexible hierarchy handling in DAX to show both current and historical reporting lines</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-box">
+                        <strong>✅ Deliverables:</strong>
+                        <ul class="action-list">
+                            <li>5 production dashboards with comprehensive documentation</li>
+                            <li>Data model design document explaining all relationships and calculations</li>
+                            <li>User guide with use cases for different stakeholder groups</li>
+                            <li>Technical troubleshooting guide for future maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adoption & Impact -->
+            <div class="sql-section">
+                <div class="sql-toggle" onclick="toggleSQL(this)">
+                    <span>📈 Adoption & Business Impact</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="sql-content">
+                    <p style="margin-bottom: 1rem; color: #555;">
+                        Successfully migrated the banking client from fragmented Excel-based reporting to unified Power BI dashboards. Achieved high adoption through comprehensive training and ongoing support.
+                    </p>
+
+                    <div class="finding-box">
+                        <strong>🎯 Adoption Metrics:</strong>
+                        <ul style="list-style-position: inside; padding-left: 1rem; margin-top: 0.5rem;">
+                            <li><span class="kpi-badge">99% SLA uptime</span> on all dashboards (target was 95%)</li>
+                            <li><span class="kpi-badge">50+ daily active users</span> across finance, HR, and operations teams</li>
+                            <li><span class="kpi-badge">Zero critical issues</span> post-deployment during 11-month engagement</li>
+                            <li>Monthly feature requests from users (sign of engagement and value realization)</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-box">
+                        <strong>✅ Support & Knowledge Transfer:</strong>
+                        <ul class="action-list">
+                            <li>Conducted <span class="kpi-badge">5 comprehensive training sessions</span> for different user groups</li>
+                            <li>Created 40+ page user documentation with screenshots and examples</li>
+                            <li>Set up monthly review meetings to gather feedback and identify improvements</li>
+                            <li>Provided ongoing technical support: avg response time <4 hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 6px;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">📋 Project Summary</h4>
+                <ul style="list-style-position: inside; padding-left: 1rem;">
+                    <li><strong>Duration:</strong> 11 months (January - November 2022)</li>
+                    <li><strong>Dashboards Delivered:</strong> <span class="kpi-badge">5 comprehensive dashboards</span></li>
+                    <li><strong>Data Model:</strong> <span class="kpi-badge">Star schema with 8+ dimensions</span>, <span class="kpi-badge">25+ DAX measures</span></li>
+                    <li><strong>User Base:</strong> <span class="kpi-badge">50+ daily active users</span> across finance, HR, operations</li>
+                    <li><strong>Performance:</strong> <span class="kpi-badge">99% uptime SLA</span>, <span class="kpi-badge"><5 min refresh</span></li>
+                    <li><strong>Impact:</strong> Eliminated manual reporting, enabled self-service analytics, improved decision speed</li>
+                </ul>
+            </div>
         </article>
     </section>
 
@@ -1054,7 +1148,6 @@ ORDER BY Attrition_Rate DESC;</code></pre>
     <!-- Syntax Highlighting Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powershell.min.js"></script>
 
     <!-- Toggle SQL Sections Script -->
     <script>
